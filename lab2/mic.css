@@ -1,0 +1,119 @@
+body{
+    margin:0;
+    padding:0;
+    font-family: Calibri;
+}
+.navbar{
+    background: white;
+    
+}
+.navbar-left,
+.navbar-right {
+    position: absolute;
+    top: 0;
+    background-color: #fefefe;
+    overflow: hidden;
+}
+.navbar-left {
+    left: 145px;
+}
+
+.navbar-right {
+    right: 0;
+}
+.navbar-left a,
+.navbar-right a {
+    float: left;
+    display: block;
+    color: rgb(8, 8, 8);
+    text-align:justify;
+    padding: 13px 16px;
+    text-decoration: none;
+    font-size: 13px;
+    
+}
+.imgofmic{
+    position:absolute;
+    width:120px;
+    margin-top:7px;
+    margin-left:4px;
+}   
+.page{
+    width: 100%;
+    height: 100%;
+}
+.img{
+    width:100%;
+    margin-top: 50px;
+    
+}
+.mic{
+    position: absolute;
+    top:34%; 
+    left: 25%; 
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 18px; 
+    font-family: Calibri; 
+   
+}
+.mic h2{
+    font-weight:bold;
+    font-size: 50px;
+   
+}
+form button{
+    border: none;
+    height:30px;
+    width: 130px;
+    background: transparent;
+    font-weight: bold;
+    text-align: center;
+
+}
+form button:hover{
+    background: black;
+    color:white;
+}
+.i1 p, .i2 p, .i3 p, .i4 p{
+    font-size: 17px;
+    font-family: Calibri;
+}
+.i1 h2, .i2 h2, .i3 h2, .i4 h2{
+    font-size: 32px;
+}
+a.i1, a.i2, a.i3, a.i4{
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.part1 {
+    margin-top:30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.i1, .i2, .i3, .i4 {
+    text-align:justify;
+}
+.dropdown {
+    display: inline-block;
+    position: absolute;
+    z-index: 999; 
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 999; 
+}
+
+.dropdown:hover .dropdown-content {
+    display:block;
+}
+
