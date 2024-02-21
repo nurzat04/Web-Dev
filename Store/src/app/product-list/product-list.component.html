@@ -1,0 +1,33 @@
+<h2 style="color:black; font-weight: bold; font-size: 30px">Products</h2>
+
+<div *ngFor="let product of products">
+  <h3>
+    <a
+      [title]="product.name + ' details'"
+      [routerLink]="['/products', product.id]"
+    >
+      {{ product.name }}
+    </a>
+  </h3>
+  <img
+    [src]="product.image"
+    [alt]="product.name + ' image'"
+    style="max-width: 200px; max-height: 200px;"
+  />
+  <p style="font-weight: bold; color: green;">
+    Price: {{ product.price + '$' }}
+  </p>
+  <p style="color: black">Rating: {{ product.rating }}</p>
+  <p>
+    <a
+      style="text-decoration: underline; color:red"
+      [href]="product.url"
+      target="_blank"
+      >Kaspi.kz</a
+    >
+  </p>
+
+  <button type="button" (click)="share(product)">Share</button>
+  <app-product-alerts [product]="product" (notify)="onNotify()">
+  </app-product-alerts>
+</div>
