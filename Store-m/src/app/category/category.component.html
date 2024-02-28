@@ -1,0 +1,51 @@
+<!-- category.component.html -->
+
+<div class="bs">
+  <!-- Buttons for each category -->
+  <button
+    *ngFor="let category of categories"
+    (click)="selectCategory(category)"
+  >
+    {{ category.name }}
+  </button>
+</div>
+
+<div class="products-container">
+  <div *ngFor="let product of selectedCategory?.products" class="product">
+    <!-- Product details -->
+    <h3>
+      <a
+        [title]="product.name + ' details'"
+        [routerLink]="['/products', product.id]"
+      >
+        {{ product.name }}
+      </a>
+    </h3>
+    <img
+      [src]="product.image"
+      [alt]="product.name + ' image'"
+      style="max-width: 200px; max-height: 200px;"
+    />
+    <p style="font-weight: bold; color: #518b24;">
+      Price: {{ product.price + '$' }}
+    </p>
+    <p class="product-actions"> Likes: {{product.likes}}
+    <p>
+      Description: {{ product.description }}
+    </p>
+    <p style="color: #ceb724; font-weight: bold;">Rating: {{ product.rating }}</p>
+    <p>
+      <a
+        style="text-decoration: underline; color:red"
+        [href]="product.url"
+        target="_blank"
+        >Kaspi.kz</a
+      >
+    </p>
+    <button type="button" (click)="share(product)">Share</button>
+    
+    <button (click)="onLike(product)" style="position: absolute; margin-left: 240px; padding-bottom: 7px; padding-top: 7px; background-color: #c0618c" >Like ❤</button>
+    <app-product-alerts [product]="product" (notify)="onNotify()">
+    </app-product-alerts>
+  </div>
+</div>
