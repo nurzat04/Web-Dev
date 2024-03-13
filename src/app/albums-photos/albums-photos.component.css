@@ -1,0 +1,32 @@
+h1 {
+    color: rgb(235, 147, 16);
+    font-family: Helvetica;
+    margin: 10px;
+    width: 300px;
+}
+.inf{
+    margin-bottom: 20px;
+    border: 2px solid rgb(27, 45, 88);
+    border-radius:10px;
+    width:350px;
+    height: 300px;
+    margin:30px;
+    display:inline-table;
+    position: relative;
+}
+.inf .p{
+    color: rgb(16, 125, 18);
+}
+button{
+    color:white;
+    background:rgb(27, 45, 88);
+    width:80px;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight:200;
+    position: absolute;
+    left: 93%;
+    top: 20%;
+}

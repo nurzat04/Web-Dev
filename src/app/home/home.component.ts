@@ -1,50 +1,34 @@
-import { Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { HousingLocationComponent } from '../housing-location/housing-location.component';
-import { HousingLocation } from '../housinglocation';
-import { HousingService } from '../housing.service';
-
+import { Component } from '@angular/core';
+import { AlbumService } from '../album.service';
+import { albums, Album } from '../album';
 @Component({
   selector: 'app-home',
-  standalone: true,
-  imports: [
-    CommonModule,
-    HousingLocationComponent
-  ],
-  template: `
-    <section>
-      <form>
-        <input type="text" placeholder="Filter by city" #filter>
-        <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
-      </form>
-    </section>
-    <section class="results">
-      <app-housing-location
-        *ngFor="let housingLocation of filteredLocationList"
-        [housingLocation]="housingLocation">
-      </app-housing-location>
-    </section>
-  `,
-  styleUrls: ['./home.component.css'],
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.css'
 })
-
 export class HomeComponent {
-  housingLocationList: HousingLocation[] = [];
-  housingService: HousingService = inject(HousingService);
-  filteredLocationList: HousingLocation[] = [];
-  constructor() {
-    this.housingLocationList = this.housingService.getAllHousingLocations();
-    this.filteredLocationList = this.housingLocationList;
-  }
-  filterResults(text: string) {
-    if (!text) {
-      this.filteredLocationList = this.housingLocationList;
-      return;
-    }
+  showCreateAlbumDialog = false;
+  //newAlbum: any = {};
+  newAlbum: Album = { userId: 0, id: 0, title: '' , photos: []};
+  constructor(private albumService: AlbumService) {}
 
-    this.filteredLocationList = this.housingLocationList.filter(
-      housingLocation => housingLocation?.city.toLowerCase().includes(text.toLowerCase())
+  openCreateAlbumDialog() {
+    this.showCreateAlbumDialog = true;
+    //this.newAlbum = {};
+    this.newAlbum = { userId: 0, id: 0, title: '' , photos: []};
+    
+
+  }
+
+  createAlbum() {
+    this.albumService.createAlbum(this.newAlbum).subscribe(
+      (response) => {
+        alert('Album created successfully!');
+        albums.push(this.newAlbum);
+        this.showCreateAlbumDialog = false;
+      }
     );
   }
-}
 
+
+}
