@@ -1,0 +1,50 @@
+.create-album-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border: 1px solid #ccc;
+  z-index: 9999;
+}
+.home-button{
+  color:white;
+  background:rgb(27, 45, 88);
+  position: absolute;
+  top:12%;
+  left: 96%;
+  width:35px;
+  height: 35px;
+  border: none;
+  font-size: 30px;
+  font-weight:200;
+  padding-bottom:20px;
+}
+.home-button:hover {
+  background:rgb(62, 92, 162);
+
+}
+.create-album-dialog{
+  border: 1px solid white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  display: grid;
+  width: 300px;
+  height:300px;
+}
+.create-album-dialog label{
+  font-family: Helvetica;
+}
+.create-album-dialog input{
+  border: 1.5px solid rgb(27, 45, 88);
+  border-radius: 5px;
+  height:32px;
+}
+.create-album-dialog button{
+  border: 1px solid rgb(27, 45, 88);
+  background-color: rgb(27, 45, 88);
+  color: white;
+  border-radius: 5px;
+  height: 32px;
+}
