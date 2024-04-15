@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ vacancy.name }}</title>
+</head>
+<body>
+    <h1>{{ vacancy.name }}</h1>
+    <p>Description: {{ vacancy.description }}</p>
+    <p>Salary: {{ vacancy.salary }}</p>
+    <p>Company: <a href="{% url 'company_detail' vacancy.company.pk %}">{{ vacancy.company.name }}</a></p>
+    <a href="{% url 'vacancy_update' vacancy.pk %}">Update</a>
+    <form action="{% url 'vacancy_delete' vacancy.pk %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Delete">
+    </form>
+</body>
+</html>

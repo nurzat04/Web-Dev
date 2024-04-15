@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ company.name }}</title>
+</head>
+<body>
+    <h1>{{ company.name }}</h1>
+    <p>Description: {{ company.description }}</p>
+    <p>City: {{ company.city }}</p>
+    <p>Address: {{ company.address }}</p>
+    <a href="{% url 'company_update' company.pk %}">Update</a>
+    <form action="{% url 'company_delete' company.pk %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Delete">
+    </form>
+</body>
+</html>

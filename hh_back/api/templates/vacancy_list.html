@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vacancy List</title>
+</head>
+<body>
+    <h1>Vacancy List</h1>
+    <ul>
+        {% for vacancy in vacancies %}
+            <li><a href="{% url 'vacancy_detail' vacancy.pk %}">{{ vacancy.name }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'vacancy_create' %}">Create New Vacancy</a>
+</body>
+</html>
