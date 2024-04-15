@@ -1,0 +1,20 @@
+<div class="company">
+    <p><strong>Companies list:</strong></p>
+    <div *ngFor="let c of companys" (click)="selectCompany(c)">
+        <li>name: {{c.name}},</li>
+        <li>description: {{c.description}},</li>
+        <li>city: {{c.city}},</li>
+        <li>address: {{c.address}}.</li>
+        <p>  </p>
+    </div>
+</div>
+<div *ngIf="selectedCompany" class="vacancies">
+    <p><strong>Vacancies list:</strong></p>
+    <div *ngFor="let v of vacancys" class="vacancy">
+        <li>name: {{v.name}},</li>
+        <li>description: {{v.description}},</li>
+        <li>salary: {{v.salary}},</li>
+        <li>company: {{v.company}}.</li>
+        <p> </p>
+    </div>
+</div>
